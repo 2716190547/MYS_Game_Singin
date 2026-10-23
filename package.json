@@ -1,13 +1,21 @@
 {
   "name": "mihoyo-sign-in",
-  "version": "1.1.0",
-  "description": "",
+  "version": "1.2.0",
+  "description": "米游社、米家云游戏自动签到脚本 (Node.js 版) - 支持多账号、结构化告警与多渠道推送",
   "main": "main.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node main.js",
+    "check-cookie": "node scripts/check-cookie.js",
+    "test": "node --check main.js && node --check src/notify.js && node --check src/MYS/index.js && node --check src/MihoyoCloud/index.js"
   },
-  "keywords": [],
+  "keywords": [
+    "mihoyo",
+    "genshin",
+    "starrail",
+    "checkin",
+    "sign-in"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {

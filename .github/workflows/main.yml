@@ -11,12 +11,12 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Set up Node.js
-      uses: actions/setup-node@v3
+      uses: actions/setup-node@v4
       with:
-        node-version: '18'
+        node-version: '20'
 
     - name: Install dependencies
       run: npm install
@@ -26,4 +26,9 @@ jobs:
         MYS_COOKIES: ${{ secrets.MYS_COOKIES }}
         GENSHIN_TOKENS: ${{ secrets.GENSHIN_TOKENS }}
         STARRAIL_TOKENS: ${{ secrets.STARRAIL_TOKENS }}
+        PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
+        SERVERCHAN_KEY: ${{ secrets.SERVERCHAN_KEY }}
+        TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+        TG_USER_ID: ${{ secrets.TG_USER_ID }}
+        WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
       run: node main.js
